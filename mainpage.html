@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Design - Search and Create</title>
+    <link rel="stylesheet" href="mainpage.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PRICEPOINT</div>
+            <ul class="nav-links">
+                <li><a href="mainpage.html#search">Search</a></li>
+                <li><a href="mainpage.html#categories">Categories</a></li>
+                <li><a href="mainpage.html#footer">About us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Replacing the Hero Section with Search Section -->
+        <div class="search-container" id="search">
+            <h1>What are you looking for?</h1>
+            <div class="search-bar">
+                <input list="searchOptions" placeholder="Search Type" id="searchInput">
+                <span class="search-icon">&#128269;</span>
+                <!-- Dropdown suggestions using datalist -->
+                <datalist id="searchOptions">
+                    <option value="Query based on exact Make/Model of a Product"></option>
+                    <option value="Query based on Most Relevant Specifications of a Product"></option>
+                    <option value="Query based on Basic Requirements of a Service"></option>
+                </datalist>
+            </div>
+            
+            <div class="query-options">
+                <a href="p1.html" class="query-option query-1"><button >Query based on exact Make/Model of a Product</button></a>
+                <a href="p2.html" class="query-option query-2"><button>Query based on Most Relevant Specifications of a Product</button></a>
+                <a href="p3.html" class="query-option query-3"><button>Query based on Basic Requirements of a Service</button></a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="categories" id="categories">
+    <h1>Categories</h1>
+
+    <div class="categories-grid">
+        <div class="category-item">
+            <img src="elec.jpg" alt="Furniture">
+            <p>Electronics</p>
+        </div>
+        <div class="category-item">
+            <img src="cloth.jpeg" alt="Clothing">
+            <p>Clothing</p>
+        </div>
+        <div class="category-item">
+            <img src="sport.jpeg" alt="Sports and Outdoors">
+            <p>Sports and Outdoors</p>
+        </div>
+        <div class="category-item">
+            <img src="books.jpeg" alt="Books">
+            <p>Books</p>
+        </div>
+        <div class="category-item">
+            <img src="games.jpeg" alt="Toys & Games">
+            <p>Toys & Games</p>
+        </div>
+        <div class="category-item">
+            <img src="shoes.jpeg" alt="Shoes">
+            <p>Shoes</p>
+        </div>
+        <div class="category-item">
+            <img src="pet.jpeg" alt="Pet Supplies">
+            <p>Storage</p>
+        </div>
+        <div class="category-item">
+            <img src="health.jpeg" alt="Health and household">
+            <p>Health and household</p>
+        </div>
+
+        <div class="category-item">
+            <img src="kitchen.jpeg" alt="Home and kitchen">
+            <p>Home and kitchen</p>
+        </div>
+
+        <div class="category-item">
+            <img src="baby.jpeg" alt="Baby Products">
+            <p>Baby Products</p>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-container" id="footer">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Our web-based application helps government procurement teams ensure transparency and cost-effectiveness by gathering real-time price data from public sources. Users can input product details, and the system crawls the web to provide accurate price benchmarks, streamlining the procurement process for both common and specialized items. Simple, fast, and efficient.</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="#">Categories</a></li>
+                    
+                </ul>
+            </div>
+    
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: pricepoint@gmail.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 pricepoint | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

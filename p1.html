@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricepoint Navbar</title>
+    <link rel="stylesheet" href="p1.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="brand">Pricepoint</div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="mainpage.html">Search</a></li>
+            <li><a href="mainpage.html#categories">Categories</a></li>
+            <li><a href="mainpage.html#footer">Help</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+<!-- Title at the center, with margins on the left and right for better spacing -->
+<div class="form-container">
+    <h2 class="form-title">Query based on exact Make/Model of a Product</h2>
+    
+    <!-- Form for entering product details -->
+    <form id="queryForm">
+        <div class="input-group">
+            <label for="itemName">Item Name</label>
+            <input type="text" id="itemName" name="itemName" placeholder="Enter Item Name (e.g., Laptop)">
+        </div>
+        <div class="input-group">
+            <label for="itemType">Item Type</label>
+            <select id="itemType" name="itemType">
+                <option value="" disabled selected>Select Item Type</option>
+                <option value="electronics">Electronics</option>
+<option value="clothing">Clothing, Shoes & Jewelry</option>
+<option value="home_kitchen">Home & Kitchen</option>
+<option value="beauty_care">Beauty & Personal Care</option>
+<option value="books">Books</option>
+<option value="pet_supplies">Pet Supplies</option>
+<option value="sports_outdoors">Sports & Outdoors</option>
+<option value="toys_games">Toys & Games</option>
+<option value="health_household">Health & Household</option>
+<option value="baby_products">Baby Products</option>
+<option value="automotive">Automotive</option>
+<option value="grocery">Grocery & Gourmet Food</option>
+<option value="office_products">Office Products</option>
+<option value="tools_improvement">Tools & Home Improvement</option>
+<option value="arts_crafts">Arts, Crafts & Sewing</option>
+
+                <!-- More item types can be added as required -->
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="make">Make</label>
+            <input type="text" id="make" name="make" placeholder="Enter Make (e.g., Dell)">
+        </div>
+        <div class="input-group">
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" placeholder="Enter Model (e.g., Inspiron 15)">
+        </div>
+        <button type="button" onclick="displayInfo()">Submit</button>
+    </form>
+
+    <!-- Section where selected product details will be displayed -->
+    <div id="output" class="output-container"></div>
+
+    <!-- Table displaying price data for the product -->
+    <table class="price-table">
+        <thead>
+            <tr>
+                <th>SI No</th>
+                <th>Price</th>
+                <th>Source</th>
+                <th>Vintage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>₹59,500</td>
+                <td><a href="https://www.amazon.in/Dell-Inspiron-i5-1335U-Processor-Keyboard/dp/B0CDBNHT9L/ref=asc_df_B0CDBNHT9L/?tag=googleshopdes-21&linkCode=df0&hvadid=709855510254&hvpos=&hvnetw=g&hvrand=5629236954270984156&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9154174&hvtargid=pla-2266203871391&psc=1&mcid=46fa602863ef3d149d7fb773cacb6efe&gad_source=1" target="_blank">Amazon.com</a></td>
+                <td>2023</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>₹56,545</td>
+                <td><a href="https://www.flipkart.com/dell-inspiron-15-backlit-keyboard-intel-core-i5-12th-gen-1235u-8-gb-512-gb-ssd-windows-11-home-new-laptop-thin-light/p/itm23d84e15561c4?pid=COMGJ75HKASCXKBH&lid=LSTCOMGJ75HKASCXKBHFMTBZE&marketplace=FLIPKART&cmpid=content_computer_21666705574_x_8965229628_gmc_pla&tgi=sem,1,G,11214002,x,,,,,,,c,,,,,,,&ef_id=Cj0KCQjwr9m3BhDHARIsANut04YJ-6EXB3G1CqjHB5uMRe5yZ0IfPg8U4MSWA4YmJA-qztSxTkWy9zUaAkV5EALw_wcB:G:s&s_kwcid=AL!739!3!!!!x!!&cmpid=content_21666705574_gmc_pla&gad_source=1&gclid=Cj0KCQjwr9m3BhDHARIsANut04YJ-6EXB3G1CqjHB5uMRe5yZ0IfPg8U4MSWA4YmJA-qztSxTkWy9zUaAkV5EALw_wcB" target="_blank">Flipcart.com</a></td>
+                <td>2023</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>₹53,190</td>
+                <td><a href="https://www.dell.com/en-in/shop/cty/pdp/spd/inspiron-15-3530-laptop/oin353034011rins1m?tfcid=30223580&gacd=10415953-9027-5761040-297509714-0&dgc=PLA&gad_source=1&gclid=Cj0KCQjwr9m3BhDHARIsANut04amwgLlJQzQEAjeTPUIWNJZSoQfEh9JLZq-oDMVWb4JKH-o2U4Dm1oaAonJEALw_wcB&gclsrc=aw.ds" target="_blank">dell.com</a></td>
+                <td>2023</td>
+            </tr>
+            <tr class="bestdeal">
+                <td>4</td>
+                <td>₹47,230</td>
+                <td><a href="https://www.reliancedigital.in/dell-inspiron-15-3520-notebook-laptop-intel-core-i5-1235u-8-gb-512-gb-ssd-integrated-graphics-windows-11-mso-fhd-39-62-cm-15-6-inch-/p/494421868?srsltid=AfmBOopOZCNZaynH2Wp7p7OIl82s0eHQQufP1QNI5yBPYoN5tB1iS6fz" target="_blank">reliancedigital.in</a></td>
+                <td>2023</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>₹61,990</td>
+                <td><a href="https://www.amazon.in/Dell-Inspiron-i5-1335U-35-56Cms-Thunderbolt/dp/B0C1595WPW/ref=asc_df_B0C1595WPW/?tag=googleshopdes-21&linkCode=df0&hvadid=709855510254&hvpos=&hvnetw=g&hvrand=7064757857515411312&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9154174&hvtargid=pla-2250116849887&psc=1&mcid=054d6a308e5f32d4a84bb024d66229fe&gad_source=1" target="_blank">Amazon.com</a></td>
+                <td>2023</td>
+            </tr>
+
+            <!-- More rows can be added dynamically as needed -->
+        </tbody>
+    </table>
+
+
+</div>
+
+<script>
+    function displayInfo() {
+        // Get form values
+        var itemName = document.getElementById("itemName").value;
+        var itemType = document.getElementById("itemType").value;
+        var make = document.getElementById("make").value;
+        var model = document.getElementById("model").value;
+
+        // Display the selected info
+        var output = document.getElementById("output");
+        output.innerHTML = `
+            <h3>Selected Information</h3>
+            <p><strong>Item Name:</strong> ${itemName}</p>
+            <p><strong>Item Type:</strong> ${itemType}</p>
+            <p><strong>Make:</strong> ${make}</p>
+            <p><strong>Model:</strong> ${model}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>

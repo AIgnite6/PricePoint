@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - PricePoint</title>
+    <link rel="stylesheet" href="acc.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1 class="logo">PricePoint</h1>
+            <div class="header-buttons">
+                <a href="#" class="help-btn">Help</a>
+                <a href="index.html" class="login-btn">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Form Section -->
+    <main>
+        <div class="main-content">
+            
+
+            <div class="form-section">
+                <form id="createAccountForm">
+                    <h2>Create Account</h2>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <button type="submit">Create Account</button>
+                </form>
+                <div class="form-footer">
+                    <a href="#">Forgot Password?</a> | <a href="index.html">Login</a>
+                </div>
+                <div id="message"></div> <!-- This is where the message will appear -->
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript to handle form submission -->
+    <script>
+        document.getElementById('createAccountForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents default form submission
+
+            // Form validation logic (optional, can add more conditions if required)
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                document.getElementById('message').innerText = "Passwords do not match.";
+                document.getElementById('message').style.color = 'red';
+                return;
+            }
+            
+            // Display a success message after form submission
+            document.getElementById('message').innerText = "Account is created!";
+            document.getElementById('message').style.color = 'green';
+        });
+    </script>
+</body>
+</html>

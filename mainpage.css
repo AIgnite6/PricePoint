@@ -1,0 +1,426 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+/* Header Section */
+header {
+    background-image: url('bgg.jpg'); /* Add the image of laptop */
+    background-size: cover;
+    background-position: center;
+    height: 95vh;
+    position: relative;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with transparency */
+    z-index: 0.2; /* Ensure it's above the background */
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 2; /* Make sure nav is above the overlay */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Default to flexbox for larger screens */
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 5px 10px;
+}
+
+.nav-links li a:hover {
+    color: #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Position below the navbar */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Background for mobile nav */
+    z-index: 2;
+}
+
+.mobile-nav.active {
+    display: flex; /* Show when active */
+}
+
+.mobile-nav li {
+    text-align: center; /* Center align links */
+    margin: 10px 0; /* Space out links */
+}
+
+/* Search Section */
+.search-container {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 700px; /* Increased width for a larger area */
+}
+
+.search-container h1 {
+    color: #22b1b1;
+    font-size: 2.6rem;
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 90px;
+    width: 70%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.2rem;
+    outline: none;
+    padding-left: 50px;
+    background-color: white;
+    color: #333;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #999;
+}
+
+
+
+
+/* Query Options Layout */
+.query-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%; /* Full width for the query options */
+}
+
+/* Shared query option (link) styles */
+.query-option {
+    text-decoration: none; /* Removes underline from links */
+    flex: 1 1 48%; /* Ensures the links take up 48% of the width */
+    max-width: calc(50% - 5px); /* Ensures they fit within the container */
+}
+
+/* Shared button styles inside query options */
+.query-option button {
+    width: 100%; /* Ensures button fills the container */
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    background-color: white;
+    color: #333;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.query-option button:hover {
+    background-color: #ffffff;
+}
+
+/* Individual classes for each query option */
+.query-1 button {
+    background-color: #f9f9f8; /* Yellow background for Query 1 */
+    font-weight: bold;
+}
+
+/* Hover effect for Query 1 */
+.query-1 button:hover {
+    background-color: #9cc3c3; /* Lighten background on hover */
+    cursor: pointer;
+}
+
+.query-2 button {
+    background-color: #fafafa; /* Green background for Query 2 */
+    font-weight: bold;
+}
+
+/* Hover effect for Query 2 */
+.query-2 button:hover {
+    background-color: #9cc3c3; /* Light green background on hover */
+    cursor: pointer;
+}
+
+.query-3 button {
+    background-color: #f7f9f9; /* Blue background for Query 3 */
+    flex: 1 1 48%;
+    font-weight: bold;
+    display: flex; /* Use flexbox to center the content */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center items */
+    margin: auto; /* Center the button itself within the parent */
+    margin-left: 180px;
+}
+
+/* Hover effect for Query 3 */
+.query-3 button:hover {
+    background-color: #9cc3c3; /* Light blue background on hover */
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links by default on small screens */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on small screens */
+    }
+
+    .mobile-nav {
+        display: none; /* Keep mobile nav hidden until active */
+    }
+}
+
+
+/* General styling for the body */
+.categories{
+    font-family: Arial, sans-serif;
+    background-color: rgb(253, 253, 253);
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: #131212;
+}
+
+/* Grid layout for categories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: auto;
+    margin: 0 auto;
+}
+
+/* Styling for each category item */
+.category-item {
+    background-color: rgb(46, 48, 48);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(250, 249, 249, 0.1);
+    text-align: center;
+    height: 210px;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.category-item:hover {
+    transform: scale(1.1); /* Increase size by 10% on hover */
+}
+
+.category-item img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.category-item p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fcfbfb;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-item p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* Responsive for Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the navigation links */
+        flex-direction: column; /* Display them in a column */
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Show the hamburger menu icon */
+    }
+
+    .nav-links.show {
+        display: flex; /* Show menu on click */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    input[type="text"] {
+        width: 80vw;
+        font-size: 1rem;
+        padding: 1.2rem;
+    }
+
+    .suggestions button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Responsive for Small Screens (Mobile) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="text"] {
+        width: 85vw;
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .suggestions button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        margin: 1vh 1vw;
+    }
+}
+
+
+footer {
+    background-color: #2d2c2c; /* Black background */
+    color: #fff; /* White text */
+    padding: 0px 0;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff; /* White link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #8E793E; /* Change link color on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #232B2B; /* Darker shade for bottom section */
+    font-size: 12px;
+}
+

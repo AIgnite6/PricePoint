@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricepoint Query Form with Table</title>
+    <link rel="stylesheet" href="p2.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="brand">PricePoint</div>
+    <nav>
+        <a href="mainpage.html">Search</a>
+        <a href="mainpage.css">Categories</a>
+        <a href="mainpage.html">Help</a>
+    </nav>
+</header>
+
+<main>
+    <h2> Query based on Most Relevant Specifications of a Product</h2>
+
+    <!-- Item Name and Item Type aligned horizontally -->
+    <form id="queryForm">
+        <div class="form-group">
+            <input type="text" id="itemName" name="itemName" placeholder="Enter Item Name (e.g., Laptop)">
+            
+            <select id="itemType" name="itemType">
+                <option value="">Select Item Type</option>
+                <option value="electronics">Electronics</option>
+<option value="clothing">Clothing, Shoes & Jewelry</option>
+<option value="home_kitchen">Home & Kitchen</option>
+<option value="beauty_care">Beauty & Personal Care</option>
+<option value="books">Books</option>
+<option value="pet_supplies">Pet Supplies</option>
+<option value="sports_outdoors">Sports & Outdoors</option>
+<option value="toys_games">Toys & Games</option>
+<option value="health_household">Health & Household</option>
+<option value="baby_products">Baby Products</option>
+<option value="automotive">Automotive</option>
+<option value="grocery">Grocery & Gourmet Food</option>
+<option value="office_products">Office Products</option>
+<option value="tools_improvement">Tools & Home Improvement</option>
+<option value="arts_crafts">Arts, Crafts & Sewing</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <h3>Item Specifications</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Specification</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody id="specTable" name="specTable">
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" name="specification1" placeholder="Enter specification"></td>
+                    <td><input type="text" name="value1" placeholder="Enter value"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="text" name="specification2" placeholder="Enter specification"></td>
+                    <td><input type="text" name="value2" placeholder="Enter value"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <button type="button" onclick="addRow()">Add More Rows</button>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Section to display selected values -->
+    <div id="output"></div>
+
+    <!-- New Table to display Make, Model, Price, Source, and Vintage -->
+    <h3>Price Details</h3>
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Source</th>
+                <th>Vintage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><Make of the Product>Dell</td>
+                <td><Model No. of the Product>XPS 15 9500</td>
+                <td>₹61,990</td>
+                <td><a href="https://www.amazon.in/Dell-Inspiron-i5-1335U-35-56Cms-Thunderbolt/dp/B0C1595WPW/ref=asc_df_B0C1595WPW/?tag=googleshopdes-21&linkCode=df0&hvadid=709855510254&hvpos=&hvnetw=g&hvrand=11395046947853148455&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9154174&hvtargid=pla-2250116849887&psc=1&mcid=054d6a308e5f32d4a84bb024d66229fe&gad_source=1">Amazon.com</a></td>
+                <td><Year, YYYY> 1 month old (June 2024)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>HP</td>
+                <td>Spectre x360</td>
+                <td>₹172,499 </td>
+                <td><a href="https://www.hp.com/in-en/shop/hp-spectre-x360-2-in-1-laptop-14-eu0556tu-9t8k6pa.html?jumpid=ps_d19ef0f160&gad_source=1&gclid=Cj0KCQjwr9m3BhDHARIsANut04YjtiL9Nb3TbD0DIk-mb9tKv73J84cQDiCcAMGEdleVFrVZ70525GQaAs8SEALw_wcB&gclsrc=aw.ds">Amazon.com</a></td>
+                <td>3 months old (April 2024)</td>
+            </tr>
+            <tr  class="best">
+                <td>2</td>
+                <td>Lenovo</td>
+                <td>ThinkPad X1 Carbon</td>
+                <td>₹70,400</td>
+                <td><a href="https://www.amazon.in/Lenovo-ThinkPad-E14-Keyboard-21JKS0UA00/dp/B0CSYS3TPS/ref=asc_df_B0CSYS3TPS/?tag=googleshopdes-21&linkCode=df0&hvadid=709855510254&hvpos=&hvnetw=g&hvrand=15381416948933977217&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9154174&hvtargid=pla-2283071875325&psc=1&mcid=baf7529a94813980b6dc86a667f0bcea&gad_source=1">Amazon.com</a></td>
+                <td>2 months old (May 2024)</td>
+            </tr>
+            <!-- Additional rows can be added dynamically -->
+        </tbody>
+    </table>
+</main>
+
+<script src="p2.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Query Form with Table</title>
+    <link rel="stylesheet" href="p3.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="brand">PricePoint</div>
+    <nav>
+        <a href="mainpage.html">Search</a>
+        <a href="mainpage.html">Categories</a>
+        <a href="mainpage.html">Help</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Query based on Basic Requirements of a Service</h2>
+
+    <!-- Service Type dropdown and Location field -->
+    <form id="queryForm">
+        <div class="form-group">
+            <select id="serviceType" name="serviceType">
+                <option value="">Select Service Type</option>
+                <option value="Public Hospitals and Clinics">Public Hospitals and Clinics</option>
+                <option value="Immunization Programs">Immunization Programs</option>
+                <option value="Health Insurance">Health Insurance (e.g., Medicare, Medicaid)</option>
+                <option value="Maternal and Child Health Services">Maternal and Child Health Services</option>
+                <option value="Emergency Medical Services">Emergency Medical Services (EMS)</option>
+                <option value="Mental Health Support and Counseling">Mental Health Support and Counseling</option>
+                <option value="Substance Abuse Treatment">Substance Abuse Treatment</option>
+                <option value="Elderly Care Services">Elderly Care Services</option>
+                <option value="Disease Surveillance and Control">Disease Surveillance and Control</option>
+                <option value="Telemedicine Services">Telemedicine Services</option>
+                
+            </select>
+
+            <input type="text" id="location" name="location" placeholder="Enter Location (e.g., City)">
+        </div>
+
+        <!-- Description in tabular format -->
+        <h3>Service Description</h3>
+        <table id="description" name="description">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="descTable">
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" name="specification1" placeholder="Enter specification"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="text" name="specification2" placeholder="Enter specification"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <button type="button" onclick="addRow()">Add More Rows</button>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Section to display selected values -->
+    <div id="output"></div>
+
+    <!-- Table for Service Provider, Price, Source, and Vintage -->
+    <h3>Service Provider Details</h3>
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Service Provider</th>
+                <th>Price</th>
+                <th>Source</th>
+                <th>Vintage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="best">
+                <td>1</td>
+                <td><Service Provider>City Health Clinic</td>
+                <td>₹500</td>
+                <td><a href="https://www.justdial.com/Delhi/City-Clinic-Opposite-Tarawati-Hospital-Indraprastha-Extension/011PX120-X120-120114130324-M7P1_BZDET">justdial.com</a></td>
+                <td><Year, YYYY>2 weeks ago</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Healthy Lives Hospital</td>
+                <td>₹600</td>
+                <td><a href="https://www.medindia.net/directories/hospitals/healthy-life-clinic-new-delhi-delhi-60219.htm">medindia.net</a></td>
+                <td>1 month ago</td>
+            </tr>
+            <tr></tr>
+                <td>3</td>
+                <td>Fortis Flt. Lt. Rajan Dhall Hospital</td>
+                <td>₹550</td>
+                <td><a href="https://www.fortishealthcare.com/location/fortis-flt-lt-rajan-dhall-hospital-vasant-kunj?utm_source=google-gmb&utm_medium=gmb-seo-url&utm_campaign=FHL-gmb">fortishealthcare.com</a></td>
+                <td>3 weeks ago</td>
+            </tr>
+            <!-- Additional rows can be added dynamically -->
+        </tbody>
+    </table>
+</main>
+
+<script src="p3.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
